@@ -1,35 +1,33 @@
 #!/usr/bin/python3
-"""
-Contains a square
-"""
+""" Module for square class"""
 
 
-class square():
-    """A Class that creates square objects"""
+class Square():
+    """ Square class """
     width = 0
     height = 0
 
     def __init__(self, *args, **kwargs):
-        """Inits the square"""
+        """ Instantiation of class """
         for key, value in kwargs.items():
             setattr(self, key, value)
 
     def area_of_my_square(self):
         """ Area of the square """
-        return self.width * self.width
+        return self.width * self.height
 
-    def perimeter_of_my_square(self):
-        """ Perimeter of the square"""
+    def permiter_of_my_square(self):
+        """ Perimeter of my square """
         return (self.width * 2) + (self.height * 2)
 
     def __str__(self):
-        """String representation of the square"""
+        """ Printable representation """
         return "{}/{}".format(self.width, self.height)
 
 
 if __name__ == "__main__":
     """ Create a square object """
-    s = square(width=12, height=9)
+    s = Square(width=12, height=9)
     print(s)
     print(s.area_of_my_square())
-    print(s.perimeter_of_my_square())
+    print(s.permiter_of_my_square())
